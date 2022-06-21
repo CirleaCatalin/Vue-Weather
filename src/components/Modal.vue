@@ -15,8 +15,5 @@ export default {
 </script>
 
 <style scoped>
-.modal{
-  border: 1px solid firebrick;
-  height: 200px;
-}
+@import '../assets/styles/modal.css';
 </style>

@@ -15,8 +15,5 @@ export default {
 </script>
 
 <style scoped>
-.content{
-  border: 1px solid lightcoral;
-  height: 300px;
-}
+@import '../assets/styles/content.css';
 </style>
