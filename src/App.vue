@@ -1,60 +1,51 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+  <div class="container">
+    <nav-bar></nav-bar>
+    <content-box></content-box>
+    <modal></modal>
   </div>
 </template>
 
 <script>
+import Content from './components/Content.vue'
+import Navbar from './components/Navbar.vue'
+import Modal from './components/Modal.vue'
 export default {
-  name: 'app',
+  components: {
+    'content-box': Content,
+    'nav-bar': Navbar,
+    'modal': Modal
+  },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      title: "Dinamic title on parent",
     }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-h1, h2 {
-  font-weight: normal;
+:root {
+  --fontcolor: #313131;
+  --bgcolor: #FAFAFA;
 }
-
-ul {
-  list-style-type: none;
+html {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
   padding: 0;
 }
-
-li {
-  display: inline-block;
-  margin: 0 10px;
+body {
+  background-color: var(--bgcolor);
+  margin: 0;
+  color: var(--fontcolor);
+  transition: background-color 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.container {
+  max-width: 85vw;
+  margin: 0 auto;
 }
 
-a {
-  color: #42b983;
-}
 </style>
